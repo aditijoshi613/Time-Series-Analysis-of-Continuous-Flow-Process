@@ -50,21 +50,19 @@ The following steps are followed while preprocessing the data:
 1. Null values are checked, and such rows are removed.
 2. Next, the **output versus timestamp** plot is plotted to observe the nature of the time series.
 
-![](RackMultipart20211122-4-cwp686_html_f87a1373af47d6c8.png)
+
 
 The time series is **mean-centered** but not white noise(mean=0).
 
 1. **Box plot** of the output is plotted:
 
-![](RackMultipart20211122-4-cwp686_html_a936a08c81896525.png)
-
 Many outliers are observed. These are removed by **interquartile range** evaluation. Points lying outside 1.3\*(interquartile range) are replaced with the mean of the time series. Here, _interquartile range = quartile3 - quartile1_. After replacing the outliers, the box plot obtained has no outliers:
 
-![](RackMultipart20211122-4-cwp686_html_fb1e2a5bbc5a176f.png)
+
 
 The time series plot is as follows:
 
-![](RackMultipart20211122-4-cwp686_html_dff1533dfa7687f.png)
+
 
 1. **Output versus set point** is plotted to determine the presence of a feedback loop in the system.
 

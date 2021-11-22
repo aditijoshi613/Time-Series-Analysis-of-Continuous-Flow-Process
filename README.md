@@ -63,22 +63,22 @@ Before:
 <img width="313" alt="image" src="https://user-images.githubusercontent.com/64677521/142871174-fcce6751-2c6e-4aa6-be81-11dc41ffad22.png">
 
 After:
-<img width="325" alt="image"
+
+ <img width="302" alt="image" src="https://user-images.githubusercontent.com/64677521/142871683-5c475561-8c7e-4feb-a50d-dcec2e278ec8.png">
 
 The time series plot is as follows:
 
- ![Uploading image.png…]()
-
+ <img width="296" alt="image" src="https://user-images.githubusercontent.com/64677521/142871739-487110cf-de53-4243-a2b7-c7513d79fe89.png">
 
 1. **Output versus set point** is plotted to determine the presence of a feedback loop in the system.
 
-![](RackMultipart20211122-4-cwp686_html_66ec911c3c7c82a7.png)
+<img width="289" alt="image" src="https://user-images.githubusercontent.com/64677521/142871820-f6043b87-4b4a-450e-8d3e-c21c61bca1a9.png">
 
 The setpoint is constant for most of the points. There are a few exceptions where both output and setpoint are zero. These can be treated as exceptions when the sensor fails to receive the signal for the output. Also, the number of such points(56) is very less than the total number of data points(14088) and can be ignored. Hence, there is **no feedback loop** in the system and we don&#39;t consider setpoint as an input variable.
 
 1. For testing the stationarity of the time series, **Augmented Dickey Fuller(ADF) Test** is performed. The results are as follows:
 
-![](RackMultipart20211122-4-cwp686_html_83671059d8302ef1.png)
+<img width="237" alt="image" src="https://user-images.githubusercontent.com/64677521/142871896-b2096163-dce1-47d7-b676-de3e2732c141.png">
 
 The ADF statistic(-3.6335) is lower than the critical value at 1% significance level(-3.4308). Also, the p-value is less than 0.05. This means that we can reject the null hypothesis. Rejecting the null hypothesis means that the process has no unit root, and in turn that the time series is **stationary** or does not have time-dependent structure.
 
@@ -86,15 +86,15 @@ The ADF statistic(-3.6335) is lower than the critical value at 1% significance l
 
 Before:
 
-![](RackMultipart20211122-4-cwp686_html_a59ea7e41bfac4d7.png)
+<img width="299" alt="image" src="https://user-images.githubusercontent.com/64677521/142871951-def4ca80-6420-4f5d-8ecd-70c14808912f.png">
 
 After:
 
-![](RackMultipart20211122-4-cwp686_html_a6965876a099cb35.png)
+<img width="304" alt="image" src="https://user-images.githubusercontent.com/64677521/142871996-90d757f0-c738-461d-bad2-fd76af1915ed.png">
 
 The Q-Q plot is as follows:
 
-![](RackMultipart20211122-4-cwp686_html_4e56efae3af73b7d.png)
+<img width="308" alt="image" src="https://user-images.githubusercontent.com/64677521/142872208-348235f9-86b7-4712-90c8-1f95c2a28801.png">
 
 Since it is very far away from the y=x line, we can conclude that box-cox transformation doesn&#39;t work well with this time series.
 
@@ -102,13 +102,13 @@ Since it is very far away from the y=x line, we can conclude that box-cox transf
 
 y(t) = Level + Trend + Seasonality + Residual
 
-![](RackMultipart20211122-4-cwp686_html_15321f1954d4ed52.png)
+<img width="331" alt="image" src="https://user-images.githubusercontent.com/64677521/142872286-3d0946f4-7b51-43b4-a0ca-114df1d8c1f8.png">
 
 No significant trend or seasonality is observed.
 
 1. **Autocorrelation and partial autocorrelation** plots are obtained as follows:
 
-![](RackMultipart20211122-4-cwp686_html_624eba65ea1c3d75.png) ![](RackMultipart20211122-4-cwp686_html_7423d4cde4dfa910.png)
+<img width="290" alt="image" src="https://user-images.githubusercontent.com/64677521/142873017-e4d2a557-72d7-4b8b-a08c-08eb9c6e2a8f.png"> <img width="292" alt="image" src="https://user-images.githubusercontent.com/64677521/142873093-8fc7e230-68d5-427d-b673-d22673038e1b.png">
 
 The autocorrelation plot trails off and the partial autocorrelation plot shows a hard cut-off at lag = 2. This observation suggests that an ARx model with lags = p = 1 will be suitable for this time series.
 
@@ -124,13 +124,13 @@ Normalized Root Mean Squared error for p = 1 is **4.1988**
 
 The Q-Q plot for residuals is as follows:
 
-![](RackMultipart20211122-4-cwp686_html_ec0b482bc3296f6e.png)
+<img width="309" alt="image" src="https://user-images.githubusercontent.com/64677521/142873204-0533097f-c8e3-45db-a582-0099badb678d.png">
 
 The residuals are not distributed normally.
 
 The autocorrelation of residuals is as follows:
 
-![](RackMultipart20211122-4-cwp686_html_40d23f777c059b03.png)
+<img width="287" alt="image" src="https://user-images.githubusercontent.com/64677521/142873247-f7a91536-09ed-418a-af60-a6e7bd7f3532.png">
 
 The residuals are not white noise. Hence, this model is not a good fit.
 
@@ -138,7 +138,7 @@ The residuals are not white noise. Hence, this model is not a good fit.
 
 RNNs don&#39;t have long term memory though. Hence, **Long short-term memory networks(LSTMs)** have been recently developed. An LSTM looks as follows:
 
-![](RackMultipart20211122-4-cwp686_html_65f9709d94b6a4f.png)
+<img width="322" alt="image" src="https://user-images.githubusercontent.com/64677521/142873335-c2fa205c-263f-4541-8e11-0231aaef850e.png">
 
 1. The cell state Ct helps the network to remember information over a long range.
 2. The forget gate allows the network to throw unnecessary information.
@@ -146,15 +146,15 @@ RNNs don&#39;t have long term memory though. Hence, **Long short-term memory net
 4. The tanh layer creates a new candidate for the cell state(Ct~).
 5. The cell state is updated as:
 
-![](RackMultipart20211122-4-cwp686_html_b7285ab736333f57.png)
+<img width="158" alt="image" src="https://user-images.githubusercontent.com/64677521/142873416-ea7a5fbb-c142-4ea8-83d9-6699889bf634.png">
 
 1. Finally, the output is evaluated as:
 
-![](RackMultipart20211122-4-cwp686_html_45ed0b7950c20fee.png)
+<img width="181" alt="image" src="https://user-images.githubusercontent.com/64677521/142873477-748fd184-3e6b-437a-acaa-0e60e0a79b82.png">
 
 Tanh is the popular choice for activation function in case of LSTMs. A **single layered LSTM with 20 units** has been employed here:
 
-![](RackMultipart20211122-4-cwp686_html_f43f2accf4cc0baa.png)
+<img width="232" alt="image" src="https://user-images.githubusercontent.com/64677521/142873568-6fb850eb-934f-4115-a5eb-af80db639d48.png">
 
 The details of the network are as follows:
 
@@ -165,7 +165,7 @@ The details of the network are as follows:
 
 The loss (mean squared error) function is as follows:
 
-![](RackMultipart20211122-4-cwp686_html_72a775f06a934255.png)
+<img width="302" alt="image" src="https://user-images.githubusercontent.com/64677521/142873664-ac222889-1710-444c-8db2-cb813b2bc8d8.png">
 
 Root Mean Squared error is **0.7897**
 
@@ -173,7 +173,7 @@ Normalized Root Mean Squared error is **1.8938**
 
 If we increase the number of units(say, 26), the loss function is as follows:
 
-![](RackMultipart20211122-4-cwp686_html_43bcf50ba953caf3.png)
+<img width="294" alt="image" src="https://user-images.githubusercontent.com/64677521/142873751-01e06975-654d-4c4d-8845-a2d4ce4eb32f.png">
 
 This plot implies that such a model overfits the data. Hence, the values of errors for the test dataset are high:
 
